@@ -1,0 +1,198 @@
+package pohaci.gumunda.titis.project.cgui;
+
+
+/**
+ * <p>Title: Project Management</p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) 2006</p>
+ * <p>Company: </p>
+ * @author dewax4
+ * @version 1.0
+ */
+
+public class Customer {
+  protected long m_index = 0;
+  protected String m_code = "";
+  protected String m_name = "";
+  protected String m_address = "";
+  protected String m_city = "";
+  protected int m_postcode = 0;
+  protected String m_province = "";
+  protected String m_country = "";
+  protected String m_phone1 = "";
+  protected String m_phone2 = "";
+  protected String m_fax1 = "";
+  protected String m_fax2 = "";
+  protected String m_email = "";
+  protected String m_website = "";
+
+  protected CompanyGroup[] m_group = new CompanyGroup[0];
+  protected SpecificAddress[] m_speaddress = new SpecificAddress[0];
+  protected Personal[] m_personal = new Personal[0];
+
+  public Customer(){
+	  
+  }
+  public Customer(String code, String name, String address, String city,
+                  int postcode, String province, String country,
+                  String phone1, String phone2, String fax1, String fax2,
+                  String email, String website) {
+
+    m_code = code;
+    m_name = name;
+    m_address = address;
+    m_city = city;
+    m_postcode = postcode;
+    m_province = province;
+    m_country = country;
+    m_phone1 = phone1;
+    m_phone2 = phone2;
+    m_fax1 = fax1;
+    m_fax2 = fax2;
+    m_email = email;
+    m_website = website;
+  }
+
+  public Customer(long index, String code, String name, String address, String city,
+                  int postcode, String province, String country,
+                  String phone1, String phone2, String fax1, String fax2,
+                  String email, String website) {
+    m_index = index;
+    m_code = code;
+    m_name = name;
+    m_address = address;
+    m_city = city;
+    m_postcode = postcode;
+    m_province = province;
+    m_country = country;
+    m_phone1 = phone1;
+    m_phone2 = phone2;
+    m_fax1 = fax1;
+    m_fax2 = fax2;
+    m_email = email;
+    m_website = website;
+  }
+
+  public Customer(long index, Customer customer) {
+    m_index = index;
+    m_code = customer.getCode();
+    m_name = customer.getName();
+    m_address = customer.getAddress();
+    m_city = customer.getCity();
+    m_postcode = customer.getPostCode();
+    m_province = customer.getProvince();
+    m_country = customer.getCountry();
+    m_phone1 = customer.getPhone1();
+    m_phone2 = customer.getPhone2();
+    m_fax1 = customer.getFax1();
+    m_fax2 = customer.getFax2();
+    m_email = customer.getEmail();
+    m_website = customer.getWebsite();
+    m_group = customer.getCompanyGroup();
+    m_speaddress = customer.getSpecificAddress();
+    m_personal = customer.getPersonal();
+  }
+
+  public long getIndex() {
+    return m_index;
+  }
+
+  public String getCode() {
+    return m_code;
+  }
+
+  public String getName() {
+    return m_name;
+  }
+
+  public String getAddress() {
+    return m_address;
+  }
+
+  public String getCity() {
+    return m_city;
+  }
+
+  public int getPostCode() {
+    return m_postcode;
+  }
+
+  public String getProvince() {
+    return m_province;
+  }
+
+  public String getCountry() {
+    return m_country;
+  }
+
+  public String getPhone1() {
+    return m_phone1;
+  }
+
+  public String getPhone2() {
+    return m_phone2;
+  }
+
+  public String getFax1() {
+    return m_fax1;
+  }
+
+  public String getFax2() {
+    return m_fax2;
+  }
+
+  public String getEmail() {
+    return m_email;
+  }
+
+  public String getWebsite() {
+    return m_website;
+  }
+
+  public void setCompanyGroup(CompanyGroup[] group) {
+    m_group = group;
+  }
+
+  public CompanyGroup[] getCompanyGroup() {
+    return m_group;
+  }
+
+  public String getCompanyToString() {
+    String strgroup = "";
+    for(int i = 0; i < m_group.length; i ++) {
+      if(i == 0)
+        strgroup += m_group[i].toString();
+      else
+        strgroup += ", " + m_group[i].toString();
+    }
+    return strgroup;
+  }
+
+  public void setSpecificAddress(SpecificAddress[] address) {
+    m_speaddress = address;
+  }
+
+  public SpecificAddress[] getSpecificAddress() {
+    return m_speaddress;
+  }
+
+  public Personal[] getPersonal() {
+    return m_personal;
+  }
+
+  public void setPersonal(Personal[] personal) {
+    m_personal = personal;
+  }
+
+  public String toString() {
+    return m_code + " " + m_name;
+  }
+  private static Customer m_nullObject;
+public static Customer nullObject() {
+	if (m_nullObject == null) {
+		m_nullObject = new Customer("","","","",0, "", "","","", "", "", "", "");	
+	}
+
+	return m_nullObject;
+}
+}
