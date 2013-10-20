@@ -98,6 +98,7 @@ public class HRMBusinessLogic {
     private static HRMBusinessLogic hrmbl = null;
 
     public static HRMBusinessLogic getInstance(Connection conn) {
+        System.out.println("logic======================================");
         if (hrmbl == null) {
             hrmbl = new HRMBusinessLogic(conn);
         }
@@ -1349,9 +1350,11 @@ public class HRMBusinessLogic {
 //                throw new AuthorizationException(
 //                        "Authorization read of module " + modul + " denied");
 //            }
-
+            System.out.println("3 :======================================");
             IHRMSQL isql = new HRMSQLSAP();
-            return isql.getAllLeaveType(m_conn);
+            LeaveType[] rv = isql.getAllLeaveType(m_conn);
+            System.out.println("4 :======================================");
+            return rv;
         } catch (Exception ex) {
             throw new Exception(ex.getMessage());
         }

@@ -159,13 +159,13 @@ public class ProjectBusinessLogic {
   }
 
   public CompanyGroup createPartnerCompanyGroup(long sessionid, String modul, CompanyGroup group) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
     int trans = Connection.TRANSACTION_READ_COMMITTED;
 
     try {
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_CREATE)){
-        throw new AuthorizationException("Authorization write of module " + modul + " denied");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_CREATE)){
+//        throw new AuthorizationException("Authorization write of module " + modul + " denied");
+//      }
 
       m_conn.setAutoCommit(false);
       trans = m_conn.getTransactionIsolation();
@@ -193,13 +193,13 @@ public class ProjectBusinessLogic {
   }
 
   public CompanyGroup updatePartnerCompanyGroup(long sessionid, String modul, long index, CompanyGroup group) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
     int trans = Connection.TRANSACTION_READ_COMMITTED;
 
     try {
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_UPDATE)){
-        throw new AuthorizationException("Authorization update of module " + modul + " denied");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_UPDATE)){
+//        throw new AuthorizationException("Authorization update of module " + modul + " denied");
+//      }
 
       m_conn.setAutoCommit(false);
       trans = m_conn.getTransactionIsolation();
@@ -226,12 +226,12 @@ public class ProjectBusinessLogic {
   }
 
   public CompanyGroup[] getAllPartnerCompanyGroup(long sessionid, String modul) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
 
     try {
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
-        throw new AuthorizationException("Authorization read of module " + modul + " denied");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
+//        throw new AuthorizationException("Authorization read of module " + modul + " denied");
+//      }
 
       IProjectSQL isql = new ProjectSQLSAP();
       return isql.getAllPartnerCompanyGroup(m_conn);
@@ -242,12 +242,12 @@ public class ProjectBusinessLogic {
   }
 
   public void deletePartnerCompanyGroup(long sessionid, String modul, long index) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
 
     try {
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_UPDATE)){
-        throw new AuthorizationException("Authorization update of module " + modul + " denied");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_UPDATE)){
+//        throw new AuthorizationException("Authorization update of module " + modul + " denied");
+//      }
 
       IProjectSQL isql = new ProjectSQLSAP();
       isql.deletePartnerCompanyGroup(index, m_conn);
@@ -355,12 +355,12 @@ public class ProjectBusinessLogic {
   }
 
   public Customer[] getAllCustomer(long sessionid, String modul) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
 
     try {
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
-        throw new AuthorizationException("Authorization read of module " + modul + " denied");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
+//        throw new AuthorizationException("Authorization read of module " + modul + " denied");
+//      }
 
       IProjectSQL isql = new ProjectSQLSAP();
       return isql.getAllCustomer(m_conn);
@@ -497,12 +497,12 @@ public class ProjectBusinessLogic {
   }
 
   public Partner[] getAllPartner(long sessionid, String modul) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
 
     try {
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
-        throw new AuthorizationException("Authorization read of module " + modul + " denied");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
+//        throw new AuthorizationException("Authorization read of module " + modul + " denied");
+//      }
 
       IProjectSQL isql = new ProjectSQLSAP();
       return isql.getAllPartner(m_conn);
@@ -577,12 +577,12 @@ public class ProjectBusinessLogic {
   }
 
   public CompanyGroup[] getPartnerGroup(long sessionid, String modul, long index) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
 
     try {
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
-        throw new AuthorizationException("Authorization read of module " + modul + " denied");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
+//        throw new AuthorizationException("Authorization read of module " + modul + " denied");
+//      }
 
       IProjectSQL isql = new ProjectSQLSAP();
       return isql.getPartnerGroup(index, m_conn);
@@ -646,13 +646,13 @@ public class ProjectBusinessLogic {
   }
 
   public Personal createPersonal(long sessionid, String modul, Personal personal) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
     int trans = Connection.TRANSACTION_READ_COMMITTED;
 
     try {
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_CREATE)){
-        throw new AuthorizationException("Authorization write of module " + modul + " denied");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_CREATE)){
+//        throw new AuthorizationException("Authorization write of module " + modul + " denied");
+//      }
 
       m_conn.setAutoCommit(false);
       trans = m_conn.getTransactionIsolation();
@@ -688,13 +688,13 @@ public class ProjectBusinessLogic {
   }
 
   public Personal updatePersonal(long sessionid, String modul, long index, Personal personal) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
     int trans = Connection.TRANSACTION_READ_COMMITTED;
 
     try {
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_UPDATE)){
-        throw new AuthorizationException("Authorization update of module " + modul + " denied");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_UPDATE)){
+//        throw new AuthorizationException("Authorization update of module " + modul + " denied");
+//      }
 
       m_conn.setAutoCommit(false);
       trans = m_conn.getTransactionIsolation();
@@ -731,12 +731,12 @@ public class ProjectBusinessLogic {
   }
 
   public Personal[] getAllPersonal(long sessionid, String modul) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
 
     try {
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
-        throw new AuthorizationException("Authorization read of module " + modul + " denied");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
+//        throw new AuthorizationException("Authorization read of module " + modul + " denied");
+//      }
 
       IProjectSQL isql = new ProjectSQLSAP();
       return isql.getAllPersonal(m_conn);
@@ -747,12 +747,12 @@ public class ProjectBusinessLogic {
   }
 
   public void deletePersonal(long sessionid, String modul, long index) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
 
     try {
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_UPDATE)){
-        throw new AuthorizationException("Authorization update of module " + modul + " denied");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_UPDATE)){
+//        throw new AuthorizationException("Authorization update of module " + modul + " denied");
+//      }
 
       IProjectSQL isql = new ProjectSQLSAP();
       isql.deletePersonal(index, m_conn);
@@ -844,11 +844,11 @@ public class ProjectBusinessLogic {
   }
 
   public ProjectData[] getAllProjectData(long sessionid, String modul) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+    //AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
     try{
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_CREATE)){
-        throw new AuthorizationException("Authorization read of module " + modul + " ditolak");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_CREATE)){
+//        throw new AuthorizationException("Authorization read of module " + modul + " ditolak");
+//      }
 
       IProjectSQL isql = new ProjectSQLSAP();
       return isql.getAllProjectData(m_conn);
