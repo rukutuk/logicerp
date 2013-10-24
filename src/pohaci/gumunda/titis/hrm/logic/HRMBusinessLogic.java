@@ -2030,15 +2030,14 @@ public class HRMBusinessLogic {
 
     public Retirement getEmployeeRetirement(long sessionid, String modul,
             long employeeindex) throws Exception {
-        AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(
-                m_conn);
+//        AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
 
         try {
-            if (!autho.isAuthorized(sessionid, modul,
-                    pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)) {
-                throw new AuthorizationException(
-                        "Authorization read of module " + modul + " denied");
-            }
+//            if (!autho.isAuthorized(sessionid, modul,
+//                    pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)) {
+//                throw new AuthorizationException(
+//                        "Authorization read of module " + modul + " denied");
+//            }
 
             IHRMSQL isql = new HRMSQLSAP();
             return isql.getEmployeeRetirement(employeeindex, m_conn);
