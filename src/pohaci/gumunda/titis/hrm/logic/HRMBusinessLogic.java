@@ -4394,8 +4394,7 @@ public class HRMBusinessLogic {
     public EmployeeLeavePermissionHistory[] getEmployeeLeavePermissionHistory(
             long sessionid, String modul, long employeeIndex)
             throws Exception {
-        AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(
-                m_conn);
+        AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
 
         try {
             if (!autho.isAuthorized(sessionid, modul,

@@ -220,7 +220,7 @@ JPanel criteriaPanel() {
   /**
    *
    */
-  class SearchTable extends JTable {
+  public class SearchTable extends JTable {
     /**
 	 * 
 	 */

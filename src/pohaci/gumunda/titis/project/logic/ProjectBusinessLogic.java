@@ -909,12 +909,12 @@ public class ProjectBusinessLogic {
   }
 
   public ProjectData[] getProjectDataByCriteria(long sessionid, String modul, String query) throws Exception {      
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
 
     try{
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_CREATE)){
-        throw new AuthorizationException("Authorization read of module " + modul + " ditolak");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_CREATE)){
+//        throw new AuthorizationException("Authorization read of module " + modul + " ditolak");
+//      }
 
       ProjectSQLSAP isql = new ProjectSQLSAP();
       return isql.getProjectDataByCriteria(query, m_conn);
@@ -1470,12 +1470,12 @@ public class ProjectBusinessLogic {
   }
 
   public ProjectNotes[] getProjectNotes(long sessionid, String modul, long projectindex) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
 
     try {
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
-        throw new AuthorizationException("Authorization read of module " + modul + " denied");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
+//        throw new AuthorizationException("Authorization read of module " + modul + " denied");
+//      }
 
       IProjectSQL isql = new ProjectSQLSAP();
       return isql.getProjectNotes(projectindex, m_conn);
@@ -1582,12 +1582,12 @@ public class ProjectBusinessLogic {
   }
 
   public ProjectProgress[] getProjectProgress(long sessionid, String modul, long projectindex) throws Exception {
-    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
+//    AuthorizationBusinessLogic autho = new AuthorizationBusinessLogic(m_conn);
 
     try {
-      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
-        throw new AuthorizationException("Authorization read of module " + modul + " denied");
-      }
+//      if(!autho.isAuthorized(sessionid, modul, pohaci.gumunda.aas.dbapi.IDBConstants.ATT_READ)){
+//        throw new AuthorizationException("Authorization read of module " + modul + " denied");
+//      }
 
       IProjectSQL isql = new ProjectSQLSAP();
       return isql.getProjectProgress(projectindex, m_conn);
